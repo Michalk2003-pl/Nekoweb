@@ -1,0 +1,29 @@
+---
+import figlet from 'figlet';
+
+interface Props {
+  text: string;
+  font?: string;
+};
+const { text, font="standard" } = Astro.props as Props;
+
+const asciiText = figlet.textSync(text, {font: font});
+const asciiTextFormated = asciiText.split("\n")
+  .map((line) => line.trim())
+  .filter((line) => line != " ");
+---
+
+<div id="logo">
+    {asciiTextFormated.map((line) => <p>{ line }</p>)}
+</div>
+
+<style lang="scss">
+    #logo {
+        p {
+            margin: 0;
+            line-height: 1;
+            white-space: pre;
+            font-family: monospace;
+        }
+    }
+</style>
