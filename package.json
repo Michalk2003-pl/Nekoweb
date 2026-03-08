@@ -1,0 +1,21 @@
+{
+  "name": "nekoweb",
+  "author": {
+    "name": "Michał Kulikwski",
+    "email": "mkulikowski2003@pm.me"
+  },
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "astro": "latest"
+  },
+  "dependencies": {
+    "prettier": "^3.8.1",
+    "sass": "^1.97.3"
+  },
+  "scripts": {
+    "build": "astro check && astro build",
+    "dev": "astro dev"
+  }
+}

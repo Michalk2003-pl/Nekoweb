@@ -1,0 +1,10 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "exclude": ["dist", ".astro"],
+  "compilerOptions": {
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
+    },
+  },
+}

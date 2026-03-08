@@ -1,0 +1,19 @@
+# Dependencies (bun install)
+node_modules
+
+# Output
+dist
+
+# Logs
+logs
+
+# Dotenv environment variable files
+.env
+.env.local
+
+# Caches
+.cache
+*.tsbuildinfo
+
+# Astro dev environment
+.astro
