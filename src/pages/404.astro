@@ -1,0 +1,77 @@
+---
+import AsciiText from "@components/AsciiText.astro";
+import MainHead from "@layouts/MainHead.astro";
+---
+
+<html lang="en">
+    <MainHead title="Site not found" description="error: 404" />
+    <body>
+        <main>
+            <div id="header">
+                <AsciiText text="error: 404" font="BlurVision ASCII" />
+            </div>
+            <div id="error">
+                <p>Page you were trying to find doesn't exist</p>
+                <button onclick="location.href='/';">Home</button>
+            </div>
+        </main>
+    </body>
+</html>
+
+<style lang="scss">
+@mixin border-404 {
+    border-width: 5px;
+    border-style: dashed;
+    color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    color: white;
+    background-color: black;
+}
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#header, #error {
+    @include border-404();
+}
+
+#header {
+    margin-bottom: 2%;
+    padding: 2.5%
+}
+
+#error {
+    text-align: center;
+    width: fit-content;
+    align-self: center;
+    
+    padding: 1%;
+
+    button {
+        margin: 10px;
+        border: none;
+        
+        background-color: red;
+        color: white;
+
+        width: 90px;
+        height: 30px;
+    }
+}
+</style>

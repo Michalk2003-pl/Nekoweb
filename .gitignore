@@ -17,3 +17,6 @@ logs
 
 # Astro dev environment
 .astro
+
+# Vscode workspace config
+.vscode
