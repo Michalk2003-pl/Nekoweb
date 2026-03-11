@@ -1,0 +1,38 @@
+---
+import AsciiText from "@components/AsciiText.astro"
+import MainHead from "@layouts/MainHead.astro"
+
+interface Props {
+    text: string;
+    font?: string;
+}
+
+const { text, font} = Astro.props;
+---
+
+<html lang="en">
+    <MainHead title="No-name2215" description="Home page" /> 
+    <body>
+        <header>
+            <AsciiText text={ text } font={ font } />
+        </header>
+
+        <main>
+            <slot />
+        </main>
+    </body>
+</html>
+
+<style lang="scss">
+@use "../style/layout";
+
+* {
+    @include layout.box-border();
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+</style>
