@@ -19,52 +19,57 @@ import MainHead from "@layouts/MainHead.astro";
 </html>
 
 <style lang="scss">
-@use "../style/borders";
-@use "../style/fonts";
+  @use "../style/borders";
+  @use "../style/fonts";
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 
-  color: white;
-  background-color: black;
-}
+    margin: 0;
 
-main {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-}
+    color: white;
+    background-color: black;
+  }
 
-#header, #error {
-  @include borders.error-404();
-}
+  main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
 
-#header {
-  margin-bottom: 2%;
-  padding: 2.5%
-}
+  #header,
+  #error {
+    @include borders.dashed(white);
+  }
 
-#error {
-  @include fonts.jetBrainsMono();
+  #header {
+    margin-bottom: 2%;
+    padding: 2.5%;
+  }
 
-  text-align: center;
-  width: fit-content;
-  align-self: center;
-    
-  padding: 1%;
+  #error {
+    @include fonts.jetBrains-Mono();
 
-  button {
+    text-align: center;
+    width: fit-content;
+    align-self: center;
+
+    padding: 1%;
+
+    button {
       margin: 10px;
       border: none;
-        
+
       background-color: red;
       color: white;
 
       width: 90px;
       height: 30px;
+
+      pointer: help;
+    }
   }
-}
 </style>
