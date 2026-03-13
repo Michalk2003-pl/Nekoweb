@@ -1,0 +1,20 @@
+---
+
+---
+
+<div>
+  <small>Created by <b>MKulikowski</b>&copy; | <span id="year"></span></small>
+</div>
+
+<script>
+  const year = document.querySelector("#year");
+  if (year) year.textContent = new Date().getFullYear().toString();
+</script>
+
+<style lang="scss">
+  @use "../style/fonts";
+
+  small {
+    @include fonts.jetBrains-Mono();
+  }
+</style>
