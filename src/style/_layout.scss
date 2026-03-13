@@ -3,3 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+@mixin flex-col($wrap) {
+  display: flex;
+  flex-flow: column $wrap;
+}
+
+@mixin flex-row($wrap) {
+  display: flex;
+  flex-flow: row $wrap;
+}
