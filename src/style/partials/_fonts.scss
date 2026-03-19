@@ -4,6 +4,9 @@
 // Roboto
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+// Space Mono
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 @mixin _font-mgr($size, $weight) {
   font-size: $size;
   font-weight: $weight;
@@ -17,4 +20,9 @@
 @mixin roboto($size, $weight) {
   @include _font-mgr($size, $weight);
   font-family: "Roboto", monospace, Helvetica;
+}
+
+@mixin space-mono($size, $weight) {
+  @include _font-mgr($size, $weight);
+  font-family: "Space Mono", monospace, Helvetica;
 }
