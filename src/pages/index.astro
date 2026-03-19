@@ -2,4 +2,41 @@
 import MainLayout from "@layouts/main/MainLayout.astro";
 ---
 
-<MainLayout title="No-name2215" font="Alligator" />
+<MainLayout title="No-name2215" font="Alligator" id="index-main">
+  <div id="about-me">
+    <h2>About Webmaster</h2>
+    <div id="inner-left">
+      <p>
+        I'm young adult 23 at the moment, male living in <s>eastern</s> cental europe. I was diagnosed with aspergers at the
+        age of <a href="https://www.youtube.com/watch?v=gIqc4MQNDKA">21</a>, still struggling to find myself in this new
+        reality. Failed computer science 2 times, currently doing weekend course in financial managment. IDK what i will
+        do after finishing it but definitly not finanse.
+      </p>
+    </div>
+    <div id="inner-right">
+      <h3 class="heading">Thing i enjoy</h3>
+      <ul>
+        <li>Games</li>
+        <li>Japanese media</li>
+        <li>Computers</li>
+        <li>Cats</li>
+      </ul>
+    </div>
+  </div>
+</MainLayout>
+
+<style lang="scss">
+  @use "../style/utils" as util;
+  @use "../style/design" as design;
+
+  #about-me {
+    color: design.$color-primary;
+    h2 {
+      @include design.font-space-mono(1.75em, normal);
+    }
+    #inner-left {
+      text-align: justify;
+      text-justify: distribute;
+    }
+  }
+</style>
