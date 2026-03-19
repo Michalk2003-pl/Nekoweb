@@ -1,0 +1,49 @@
+---
+import GitGubSvg from "../../assets/img/logos/github.svg";
+
+const year = new Date().getFullYear().toString();
+---
+
+<footer>
+  <p>
+    MichalK2003-pl&copy <span class="line-div">|</span>
+    {year}
+    <span class="line-div">|</span>
+    <a target="_blank" href="#"><GitGubSvg /></a>
+  </p>
+</footer>
+
+<style lang="scss">
+  @use "../../style/utils" as util;
+  @use "../../style/design" as design;
+
+  footer {
+    color: design.$color-primary;
+    background-color: design.$color-bg-secondary;
+
+    @include util.border-solid(0.15em, design.$color-accent, 0);
+    margin: 1em;
+    padding: 1em;
+
+    p {
+      .line-div {
+        color: design.$color-accent;
+      }
+      @include design.font-jetBrains-Mono(1rem, normal);
+      margin: 0;
+    }
+
+    a {
+      color: design.$color-secondary;
+      &:hover {
+        color: design.$color-accent;
+      }
+      svg {
+        height: 1.25rem;
+        width: 1.25rem;
+        vertical-align: text-bottom;
+        stroke: currentColor;
+      }
+    }
+  }
+</style>

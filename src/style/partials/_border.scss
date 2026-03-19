@@ -1,0 +1,16 @@
+@mixin _border($width, $color) {
+  border-width: $width;
+  border-color: $color;
+}
+
+@mixin solid($width, $color, $radius) {
+  @include _border($width, $color);
+  border-style: solid;
+  border-radius: $radius;
+}
+
+@mixin dashed($width, $color, $radius) {
+  @include _border($width, $color);
+  border-style: dashed;
+  border-radius: $radius;
+}

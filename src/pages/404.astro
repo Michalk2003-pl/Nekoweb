@@ -1,10 +1,10 @@
 ---
 import AsciiText from "@components/AsciiText.astro";
-import MainHead from "@layouts/MainHead.astro";
+import Head from "@layouts/Head.astro";
 ---
 
 <html lang="en">
-  <MainHead title="Site not found" description="error: 404" />
+  <Head title="Site not found" description="error: 404" />
   <body>
     <main>
       <div id="header">
@@ -19,8 +19,8 @@ import MainHead from "@layouts/MainHead.astro";
 </html>
 
 <style lang="scss">
-  @use "../style/borders";
-  @use "../style/fonts";
+  @use "../style/utils" as util;
+  @use "../style/design" as design;
 
   body {
     display: flex;
@@ -42,7 +42,7 @@ import MainHead from "@layouts/MainHead.astro";
 
   #header,
   #error {
-    @include borders.dashed(white);
+    @include util.border-dashed(1rem, white, 0);
   }
 
   #header {
@@ -51,7 +51,7 @@ import MainHead from "@layouts/MainHead.astro";
   }
 
   #error {
-    @include fonts.jetBrains-Mono();
+    @include design.fonts-jetBrains-Mono(1rem, normal);
 
     text-align: center;
     width: fit-content;

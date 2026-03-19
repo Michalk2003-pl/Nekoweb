@@ -1,0 +1,20 @@
+// JetBrains Mono
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+// Roboto
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@mixin _font-mgr($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin jetBrains-Mono($size, $weight) {
+  @include _font-mgr($size, $weight);
+  font-family: "JetBrains Mono", Arial, Helvetica;
+}
+
+@mixin roboto($size, $weight) {
+  @include _font-mgr($size, $weight);
+  font-family: "Roboto", monospace, Helvetica;
+}

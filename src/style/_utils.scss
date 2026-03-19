@@ -1,0 +1,6 @@
+@forward "./partials/border" as border-*;
+@forward "./partials/layout" as layout-*;
+
+* {
+  box-sizing: border-box;
+}

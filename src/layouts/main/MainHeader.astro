@@ -1,0 +1,27 @@
+---
+import AsciiText from "@components/AsciiText.astro";
+
+interface Props {
+  title: string;
+  font?: string;
+}
+
+const { title, font } = Astro.props;
+---
+
+<header>
+  <AsciiText text={title} font={font} />
+</header>
+
+<style lang="scss">
+  @use "../../style/utils" as util;
+  @use "../../style/design" as design;
+
+  header {
+    @include util.border-dashed(0.3em, design.$color-accent, 0);
+    margin: 2em;
+    padding: 1em;
+
+    background-color: design.$color-bg-secondary;
+  }
+</style>

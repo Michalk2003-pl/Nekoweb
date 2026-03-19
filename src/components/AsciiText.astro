@@ -1,11 +1,13 @@
 ---
 import figlet from "figlet";
 
-interface Props {
+interface props {
   text: string;
+  textFont?: string;
   font?: string;
 }
-const { text, font = "Standard" } = Astro.props as Props;
+
+const { text, font = "Standard", textFont = "monospace" } = Astro.props as props;
 
 const asciiText = figlet.textSync(text, { font: font });
 const asciiTextFormated = asciiText

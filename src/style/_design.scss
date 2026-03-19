@@ -1,0 +1,18 @@
+@use "sass:map";
+
+// Desing Mixins
+@forward "./partials/fonts" as font-*;
+
+// Color variables
+$color-bg-primary: #121212;
+$color-bg-secondary: #1e1e1e;
+$color-accent: #8a0303;
+$color-primary: #e0e0e0;
+$color-secondary: #a49393;
+
+$palette: ();
+// General Mixins
+@mixin colors($main, $bg) {
+  color: $main;
+  background: $bg;
+}

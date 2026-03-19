@@ -1,0 +1,28 @@
+---
+import Head from "@layouts/Head.astro";
+import MainHeader from "./MainHeader.astro";
+import MainFooter from "./MainFooter.astro";
+const { title, description, font } = Astro.props;
+---
+
+<html lang="en">
+  <Head title={title} description={description} />
+  <body>
+    <MainHeader title={title} font={font} />
+    <main><slot /></main>
+    <MainFooter />
+  </body>
+</html>
+
+<style lang="scss">
+  @use "../../style/utils" as util;
+  @use "../../style/design" as design;
+
+  body {
+    @include util.layout-flex-col(nowrap);
+    align-items: center;
+
+    background-color: design.$color-bg-primary;
+    color: design.$color-primary;
+  }
+</style>
