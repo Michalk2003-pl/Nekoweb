@@ -20,7 +20,14 @@ TODO
 
 ### Typography
 
-TODO
+#### Heading
+
+Space Mono
+
+#### Regular text
+
+- Roboto
+- JetBrains Mono
 
 ## Ingridians
 
