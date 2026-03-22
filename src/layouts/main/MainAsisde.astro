@@ -1,0 +1,35 @@
+---
+
+---
+
+<aside>
+  <ul>
+    <li><a class="service" target="_blank" href="https://no-name2215.atabook.org/">GuestBook</a></li>
+    <li><a class="service" target="_self" href="/changeLog">ChangeLog</a></li>
+  </ul>
+</aside>
+
+<style lang="scss">
+  @use "../../style/utils" as util;
+  @use "../../style/design" as design;
+
+  aside {
+    @include util.border-dashed(0.3em, design.$color-accent, 0);
+    padding: 1em;
+    background-color: design.$color-bg-secondary;
+    .service {
+      @include design.font-jetBrains-Mono(1rem, normal);
+      color: design.$color-secondary;
+    }
+    ul {
+      text-align: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+</style>

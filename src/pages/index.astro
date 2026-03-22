@@ -2,25 +2,30 @@
 import MainLayout from "@layouts/main/MainLayout.astro";
 ---
 
-<MainLayout title="No-name2215" font="Alligator" id="index-main">
-  <div id="about-me">
-    <h2>About Webmaster</h2>
-    <div id="inner-left">
-      <p>
-        I'm young adult 23 at the moment, male living in <s>eastern</s> cental europe. I was diagnosed with aspergers at the
-        age of <a href="https://www.youtube.com/watch?v=gIqc4MQNDKA">21</a>, still struggling to find myself in this new
-        reality. Failed computer science 2 times, currently doing weekend course in financial managment. IDK what i will
-        do after finishing it but definitly not finanse.
-      </p>
-    </div>
-    <div id="inner-right">
-      <h3 class="heading">Thing i enjoy</h3>
-      <ul>
-        <li>Games</li>
-        <li>Japanese media</li>
-        <li>Computers</li>
-        <li>Cats</li>
-      </ul>
+<MainLayout title="No-name2215" font="Alligator">
+  <div id="main">
+    <div id="about-me">
+      <h2>About Webmaster</h2>
+      <div id="inner-about-me">
+        <div id="inner-left">
+          <h3>TLDR</h3>
+          <p>
+            I'm young adult 23 at the moment, male living in <s>eastern</s> cental europe. I was diagnosed with aspergers at the age of
+            <a href="https://www.youtube.com/watch?v=qtVH_oYeA6E">21</a>, still struggling to find myself in this new reality. Failed
+            computer science 2 times, currently doing weekend course in financial managment. IDK what i will do after finishing it but
+            definitly not the think i'm studying.
+          </p>
+        </div>
+        <div id="inner-right">
+          <h3 class="heading">Thing i enjoy</h3>
+          <ul>
+            <li>Games</li>
+            <li>Japanese media</li>
+            <li>Computers</li>
+            <li>Cats</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </MainLayout>
@@ -33,10 +38,37 @@ import MainLayout from "@layouts/main/MainLayout.astro";
     color: design.$color-primary;
     h2 {
       @include design.font-space-mono(1.75em, normal);
+      margin: 0;
+      text-align: center;
+    }
+    h3 {
+      @include design.font-space-mono(1.25em, normal);
+      margin: 0.05rem;
+    }
+    #inner-about-me {
+      @include util.layout-flex-row(nowrap);
+      gap: 1rem;
     }
     #inner-left {
+      P {
+        @include design.font-roboto(1em, normal);
+        a {
+          color: design.$color-primary;
+          text-decoration: none;
+          cursor: crosshair;
+        }
+      }
+      max-width: 75%;
       text-align: justify;
       text-justify: distribute;
+    }
+    #inner-right {
+      width: stretch;
+      li {
+        @include design.font-roboto(1em, normal);
+        color: design.$color-primary;
+        list-style-type: square;
+      }
     }
   }
 </style>
