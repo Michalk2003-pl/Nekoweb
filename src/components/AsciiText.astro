@@ -10,10 +10,7 @@ interface props {
 const { text, font = "Standard", textFont = "monospace" } = Astro.props as props;
 
 const asciiText = figlet.textSync(text, { font: font });
-const asciiTextFormated = asciiText
-  .split("\n")
-  .map((line) => line.trim())
-  .filter((line) => line != " ");
+const asciiTextFormated = asciiText.split("\n").filter((line) => line != " ");
 ---
 
 <div id="logo">
