@@ -20,6 +20,7 @@
   },
   "scripts": {
     "build": "astro check && astro build",
-    "dev": "astro dev"
+    "dev:local": "astro dev",
+    "dev:online": "astro dev --host"
   }
 }

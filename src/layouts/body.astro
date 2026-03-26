@@ -1,0 +1,21 @@
+---
+import Head from "@layouts/Head.astro";
+
+interface Props {
+  pageTitle: string;
+  description?: string;
+}
+
+const { pageTitle, description = "Not Provided" } = Astro.props as Props;
+---
+
+<html lang="en">
+  <Head title={pageTitle} description={description} />
+  <body> <slot /> </body>
+</html>
+
+<style lang="scss">
+  * {
+    box-sizing: border-box;
+  }
+</style>
