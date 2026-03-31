@@ -5,7 +5,7 @@ import { z } from "astro/zod";
 const changeLog = defineCollection({
   loader: file("src/content/changeLog/changeLog.json"),
   schema: z.object({
-    id: z.number(),
+    id: z.number().transform((value) => (value.toString().padStart(3, "0"))),
     year: z.number(),
     date: z.string(),
     change: z.string(),

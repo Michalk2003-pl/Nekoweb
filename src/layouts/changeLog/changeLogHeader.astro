@@ -1,0 +1,21 @@
+---
+import AsciiText from "@components/AsciiText.astro";
+---
+
+<header>
+  <div id="logo">
+    <AsciiText text="Change-log" font="Slant" />
+  </div>
+</header>
+
+<style lang="scss">
+  @use "../../style/utils" as utils;
+  @use "../../style/design" as design;
+
+  div {
+    width: fit-content;
+    padding: 1.5rem;
+    @include utils.border-dashed(0.3rem, design.$color-accent, 0);
+    background-color: design.$color-bg-secondary;
+  }
+</style>

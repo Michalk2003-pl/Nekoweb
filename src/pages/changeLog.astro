@@ -1,28 +1,21 @@
 ---
 import Body from "@layouts/body.astro";
-import { getCollection } from "astro:content";
+import Header from "@layouts/changeLog/changeLogHeader.astro";
+import Div from "@layouts/changeLog/changeLogDiv.astro";
 
+import { getCollection } from "astro:content";
 const changeLog = await getCollection("changeLog");
 ---
 
 <Body pageTitle="Change-log" description="Here are the changes to this website i have made">
+  <Header />
   <main>
-    {
-      changeLog.map((change) => (
-        <div>
-          <p>
-            {change.data.id}
-            <span> | </span>
-            {change.data.date}
-          </p>
-          <p>{change.data.change}</p>
-        </div>
-      ))
-    }
+    {changeLog.map((change) => <Div changeId={change.data.id} date={change.data.date} change={change.data.change} />)}
   </main>
 </Body>
 
 <style lang="scss">
+  @use "sass:math";
   @use "../style/utils" as util;
   @use "../style/design" as design;
 
@@ -30,6 +23,18 @@ const changeLog = await getCollection("changeLog");
     body {
       background-color: design.$color-bg-primary;
       color: design.$color-primary;
+
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+
+      main {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        gap: 0.5em;
+        width: 60em;
+      }
     }
   }
 </style>

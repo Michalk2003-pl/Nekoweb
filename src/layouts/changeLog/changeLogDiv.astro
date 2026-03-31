@@ -1,0 +1,40 @@
+---
+interface Props {
+  changeId: string;
+  date: string;
+  change: string;
+}
+
+const { changeId, date, change } = Astro.props as Props;
+---
+
+<div>
+  <p class="first-line">{changeId}<span> | </span>{date}</p>
+  <p class="second-line">{change}</p>
+</div>
+
+<style lang="scss">
+  @use "../../style/utils" as utils;
+  @use "../../style/design" as design;
+
+  .first-line {
+    @include design.font-jetBrains-Mono(1.5em, normal);
+    span {
+      color: design.$color-secondary;
+    }
+  }
+
+  .second-line {
+    @include design.font-roboto(1em, light);
+  }
+
+  div {
+    @include utils.border-solid(0.25rem, design.$color-accent, 0);
+    width: fit-content;
+    padding: 0.5rem;
+    background-color: design.$color-bg-secondary;
+    p {
+      margin: 0;
+    }
+  }
+</style>
